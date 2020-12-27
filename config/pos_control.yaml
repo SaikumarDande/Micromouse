@@ -1,0 +1,21 @@
+simple_model:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+ 
+  wheel_left_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: wheel_left_joint
+    pid: {p: 1.0, i: 0.0, d: 1.0}
+
+  wheel_right_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: wheel_right_joint
+    pid: {p: 1.0, i: 0.0, d: 1.0}
+
+  gazebo_ros_control:
+    pid_gains:
+      wheel_left_joint : {p: 1.0, i: 0.0, d: 1.0}
+      wheel_right_joint : {p: 1.0, i: 0.0, d: 1.0}
+
+
